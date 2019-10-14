@@ -16,10 +16,14 @@ class GenStack { //stands for Generic Stack
     bool isFull();
     bool isEmpty();
 
+    void resize();
+
     int size;
+    int newSize;
     int top;
 
     T *myArray; //* is a pointer
+    T *copyArray;
 };
 
 template <typename T>
@@ -44,8 +48,9 @@ GenStack<T>::~GenStack() {
 
 template <typename T>
 void GenStack<T>::push(T d) {
-  //need to check error/boundary check
-  //this is your job
+  if (isFull()) {
+    resize();
+  }
   myArray[++top] = d; //adds one to top then pushes
 }
 
@@ -60,8 +65,18 @@ T GenStack<T>::pop() {
 
 template <typename T>
 T GenStack<T>::peek() {
-  //check if empty
   return myArray[top];
+}
+
+template <typename T>
+void GenStack<T>::resize() {
+  newSize = size * 2;
+  copyArray = new T[newSize];
+  for (int i = 0; i < size; i++) {
+    copyArray[i] = myArray[i];
+  }
+  delete[] myArray;
+  myArray = copyArray;
 }
 
 template <typename T>
