@@ -57,7 +57,7 @@ int main (int argc, char **argv) {
   cout << "Delimiter Checker" << endl;
   cout << "--------------------" << endl;
   infile.open(argv[1]); // opens the file given
-  if (!infile) {
+  if (!infile) { //checks if file can be opened
     cout << "Cannot open input file. Please try again" << endl;
     inputFile();
   }
