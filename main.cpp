@@ -1,4 +1,4 @@
-#include "GenStack.cpp"
+#include "GenStack.h"
 #include <iostream>
 #include <fstream>
 
