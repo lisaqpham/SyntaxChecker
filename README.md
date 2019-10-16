@@ -10,7 +10,7 @@ A stack-based implementation to check delimiter errors.
 
 ### 2. A LIST OF ALL SOURCE FILED SUBMITTED FOR THIS ASSIGNMENT
   * main.cpp
-  * GenStack.cpp
+  * GenStack.h
   * Makefile
   * README.md
 
